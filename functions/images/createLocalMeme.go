@@ -3,7 +3,9 @@ package images
 import (
 	"bytes"
 	"fmt"
+	"image/color"
 	"image/jpeg"
+	"log"
 	"math"
 	"meme-generator/functions/files"
 	"os"
@@ -12,7 +14,7 @@ import (
 	"github.com/fogleman/gg"
 )
 
-func CreateMeme(imagePath string, textTop string, textBottom string) string {
+func CreateOldMeme(imagePath string, textTop string, textBottom string) string {
 	im := files.GetFile(imagePath)
 	bounds := im.Bounds()
 	width := bounds.Dx()
@@ -51,6 +53,28 @@ func CreateMeme(imagePath string, textTop string, textBottom string) string {
 	buff := new(bytes.Buffer)
 	jpeg.Encode(buff, dc.Image(), nil)
 	nameFile := fmt.Sprintf("%s.jpg", imagePath)
+	os.WriteFile(nameFile, buff.Bytes(), 0644)
+	return nameFile
+}
+
+func TrumpMeme(text string) string {
+	im, err := gg.LoadPNG("memes/trump.png")
+	if err != nil {
+		log.Fatalf("unable to open image due to: %q\n", err)
+	}
+
+	dc := gg.NewContextForImage(im)
+	dc.Clear()
+	dc.SetColor(color.Black)
+	dc.LoadFontFace("fonts/arial.ttf", 50)
+	dc.DrawImage(im, 0, 0)
+	dc.DrawStringWrapped(text, 750, 580, 0, 0, 430, 1.5, gg.AlignLeft)
+	dc.Clip()
+	dc.SavePNG("trump.png")
+
+	buff := new(bytes.Buffer)
+	jpeg.Encode(buff, dc.Image(), nil)
+	nameFile := "trump.jpg"
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
 }
