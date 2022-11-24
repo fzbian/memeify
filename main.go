@@ -163,6 +163,9 @@ func undertaker(c echo.Context) error {
 
 func thisIs(c echo.Context) error {
 	url := c.QueryParam("url")
+	if url == "" {
+		return c.String(http.StatusOK, "The url parameter must be specified")
+	}
 	meme := images.ThisIs(url)
 	defer os.Remove(meme)
 	c.Response().Header().Set(echo.HeaderContentType, "image/jpeg")
@@ -170,10 +173,22 @@ func thisIs(c echo.Context) error {
 }
 
 func grimReaperKnockingDoor(c echo.Context) error {
-	url1 := c.QueryParam("imageURL1")
-	url2 := c.QueryParam("imageURL2")
-	url3 := c.QueryParam("imageURL3")
-	url4 := c.QueryParam("imageURL4")
+	url1 := c.QueryParam("url1")
+	if url1 == "" {
+		return c.String(http.StatusOK, "The URL1 parameter must be specified")
+	}
+	url2 := c.QueryParam("url2")
+	if url2 == "" {
+		return c.String(http.StatusOK, "The URL2 parameter must be specified")
+	}
+	url3 := c.QueryParam("url3")
+	if url3 == "" {
+		return c.String(http.StatusOK, "The URL3 parameter must be specified")
+	}
+	url4 := c.QueryParam("url4")
+	if url4 == "" {
+		return c.String(http.StatusOK, "The URL4 parameter must be specified")
+	}
 	meme := images.GrimReaperKnockingDoor(url1, url2, url3, url4)
 	defer os.Remove(meme)
 	c.Response().Header().Set(echo.HeaderContentType, "image/jpeg")
