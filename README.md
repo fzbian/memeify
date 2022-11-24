@@ -1,56 +1,55 @@
+To do List
 
-# Meme generator
+[x] change_my_mind
+text(x: 200, y: 240, max: 200, angle -5)
 
-Meme generator is a code created with the simple purpose of learning how image management works in this language, this project is quite simple.
+[x] disappointed_black_guy
+text1(font: 50, x: 30, y: 30, max: 680)
+text2(font: 50, x: 30, y: 400, max: 680)
 
-## API Reference
+[x] distracted_boyfriend
+text1(font: 50, x: 200, y: 580, max: 355)
+text2(font: 50, x: 650, y: 350, max: 355)
+text3(font: 50, x: 900, y: 450, max: 355)
 
-#### Get the image
+[x] drake
+text1(font: 80, x: 618, y: 16, max: 1000)
+text2(font: 80, x: 618, y: 618, max: 1000) 
 
-```http
-  GET /meme/text1/text2
-```
+[x] expanding_brain
+text1(font: 40, x: 10, y: 10, max: 400)
+text2(font: 40, x: 10, y: 315, max: 400)
+text3(font: 40, x: 10, y: 620, max: 400)
+text4(font: 40, x: 10, y: 900, max: 400)
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `meme` | `string` | the name of the meme to be used |
-| `text1` | `string` | the text at the top of the page to be used |
-| `text2` | `string` | the text at the bottom of the page to be used |
+[-] grim_reaper_knocking_door
+Va para imagenes
 
+[x] jason_momoa_henry_cavil
+text1(font: 30, x: 44, y: 347, max: 150)
+text2(font: 30, x: 220, y: 347, max: 150)
 
-## Types of memes
- - bad-luck-brian
- - batman-slaps-robin
- - crying-peter-parker
- - filosoraptor
- - gopher
- - kermit-the-frog
- - mr-bean
- - trump
- - willy-wonka
-## Demo
+[x] left_right
+text1(font: 24, x: 195, y: 100, max: 130)
+text2(font: 24, x: 421, y: 100, max: 130)
 
-The code has been uploaded to repl.it so that anyone can see how the code works.
+[x] running_away_balloon
+text1(font: 30, x: 492, y: 86, max: 400)
+text2(font: 30, x: 195, y: 100, max: 400)
+text3(font: 30, x: 6, y: 750, max: 200)
 
-Input
+[x] spiderman
+text1(font: 30, x: 158, y: 147, max: 400)
+text2(font: 30, x: 492, y: 86, max: 400)
 
-https://meme-generator.fzbian.repl.co/gopher/golang/for%20life
+[x] this_is
+url
 
-Output
+[x] three_headed_dragon
+text1(font: 30, x: 5, y: 333, max: 170)
+text2(font: 30, x: 261, y: 291, max: 170)
+text3(font: 30, x: 505, y: 340, max: 170)
 
-![](https://github.com/fzbian/meme-generator/blob/main/readmeFiles/golang-forlife.jpg?raw=true)
-## Deployment
-
-[![Run on Repl.it](https://repl.it/badge/github/fzbian/meme-generator)](https://repl.it/github/fzbian/meme-generator)
-
-To deploy this project run
-
-```bash
-  go run main.go
-```
-
-
-## Acknowledgements
-
- - [Fogleman by gg](https://github.com/fogleman/gg)
- - [AndresXLP for helping me in my learning](https://github.com/AndresXLP)
+[x] undertaker
+text1(font: 45, x: 220, y: 580, max: 280)
+text1(font: 45, x: 536, y: 440, max: 280)
