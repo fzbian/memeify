@@ -347,3 +347,34 @@ func ThisIs(imageURL string) string {
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
 }
+
+func GrimReaperKnockingDoor(imageURL1, imageURL2, imageURL3, imageURL4 string) string {
+	im, err := gg.LoadPNG("memes/grim_reaper_knocking_door.png")
+	if err != nil {
+		log.Fatalf("unable to open image due to: %q\n", err)
+	}
+
+	dc := gg.NewContextForImage(im)
+	dc.Clear()
+	dc.SetColor(color.White)
+	_, image1 := files.GetImageURL(imageURL1)
+	_, image2 := files.GetImageURL(imageURL2)
+	_, image3 := files.GetImageURL(imageURL3)
+	_, image4 := files.GetImageURL(imageURL4)
+	ResizedImage1 := imaging.Resize(image1, 50, 50, imaging.Lanczos)
+	ResizedImage2 := imaging.Resize(image2, 80, 80, imaging.Lanczos)
+	ResizedImage3 := imaging.Resize(image3, 90, 90, imaging.Lanczos)
+	ResizedImage4 := imaging.Resize(image4, 50, 50, imaging.Lanczos)
+	dc.DrawImage(im, 0, 0)
+	dc.DrawImage(ResizedImage1, 32, 68)
+	dc.DrawImage(ResizedImage2, 153, 57)
+	dc.DrawImage(ResizedImage3, 355, 20)
+	dc.DrawImage(ResizedImage4, 280, 150)
+	dc.Clip()
+
+	buff := new(bytes.Buffer)
+	jpeg.Encode(buff, dc.Image(), nil)
+	nameFile := "drake.jpg"
+	os.WriteFile(nameFile, buff.Bytes(), 0644)
+	return nameFile
+}

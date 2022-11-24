@@ -7,7 +7,6 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
-	"os"
 )
 
 var (
@@ -33,6 +32,6 @@ func GetImageURL(url string) (string, image.Image) {
 	jpeg.Encode(buff, m, nil)
 
 	nameFile := RandomName(15) + ".png"
-	os.WriteFile(nameFile, buff.Bytes(), 0644)
+	//os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile, m
 }

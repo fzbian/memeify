@@ -18,19 +18,20 @@ func main() {
 	basePath.GET("/custom/", customMeme)
 
 	// Template Memes
-	basePath.GET("/trump/", trumpMeme)                              // Trump
-	basePath.GET("/change_my_mind/", changeMyMind)                  // Change My Mind
-	basePath.GET("/disappointed_black_guy/", disappointedBlackGuy)  // Disappointed Black Guy
-	basePath.GET("/distracted_boyfriend/", distractedBoyfriend)     // Disappointed Black Guy
-	basePath.GET("/drake/", drake)                                  // Drake
-	basePath.GET("/expanding_brain/", expandingBrain)               // Expanding Brain
-	basePath.GET("/jason_momoa_henry_cavil/", jasonMomoaHenryCavil) // Jason Momoa Henry Cavil
-	basePath.GET("/left_right/", leftRight)                         // Left Right
-	basePath.GET("/running_away_balloon/", runningAwayBalloon)      // Running Away Balloon
-	basePath.GET("/spiderman/", spiderman)                          // Spiderman
-	basePath.GET("/three_headed_dragon/", threeHeadedDragon)        // Three Headed Dragon
-	basePath.GET("/undertaker/", undertaker)                        // Undertaker
-	basePath.GET("/this_is/", thisIs)                               // Undertaker
+	basePath.GET("/trump/", trumpMeme)                                  // Trump
+	basePath.GET("/change_my_mind/", changeMyMind)                      // Change My Mind
+	basePath.GET("/disappointed_black_guy/", disappointedBlackGuy)      // Disappointed Black Guy
+	basePath.GET("/distracted_boyfriend/", distractedBoyfriend)         // Disappointed Black Guy
+	basePath.GET("/drake/", drake)                                      // Drake
+	basePath.GET("/expanding_brain/", expandingBrain)                   // Expanding Brain
+	basePath.GET("/jason_momoa_henry_cavil/", jasonMomoaHenryCavil)     // Jason Momoa Henry Cavil
+	basePath.GET("/left_right/", leftRight)                             // Left Right
+	basePath.GET("/running_away_balloon/", runningAwayBalloon)          // Running Away Balloon
+	basePath.GET("/spiderman/", spiderman)                              // Spiderman
+	basePath.GET("/three_headed_dragon/", threeHeadedDragon)            // Three Headed Dragon
+	basePath.GET("/undertaker/", undertaker)                            // Undertaker
+	basePath.GET("/this_is/", thisIs)                                   // This Is
+	basePath.GET("/grim_reaper_knocking_door/", grimReaperKnockingDoor) // Grim Reaper Knocking Door
 
 	basePath.GET("/", index)
 	e.Logger.Fatal(e.Start(":8080"))
@@ -163,6 +164,17 @@ func undertaker(c echo.Context) error {
 func thisIs(c echo.Context) error {
 	url := c.QueryParam("url")
 	meme := images.ThisIs(url)
+	defer os.Remove(meme)
+	c.Response().Header().Set(echo.HeaderContentType, "image/jpeg")
+	return c.Inline(meme, meme)
+}
+
+func grimReaperKnockingDoor(c echo.Context) error {
+	url1 := c.QueryParam("imageURL1")
+	url2 := c.QueryParam("imageURL2")
+	url3 := c.QueryParam("imageURL3")
+	url4 := c.QueryParam("imageURL4")
+	meme := images.GrimReaperKnockingDoor(url1, url2, url3, url4)
 	defer os.Remove(meme)
 	c.Response().Header().Set(echo.HeaderContentType, "image/jpeg")
 	return c.Inline(meme, meme)
