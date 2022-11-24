@@ -10,6 +10,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/disintegration/imaging"
 	"github.com/fogleman/gg"
 )
 
@@ -334,9 +335,10 @@ func ThisIs(imageURL string) string {
 	dc.SetColor(color.White)
 	dc.LoadFontFace("fonts/impact.ttf", 150)
 	_, newIm := files.GetImageURL(imageURL)
+	ResizedImage := imaging.Resize(newIm, 500, 500, imaging.Lanczos)
 	dc.DrawImage(im, 0, 0)
-	dc.DrawImage(newIm, 1100, 150)
 	dc.DrawString("Esto es basura", 300, 1260)
+	dc.DrawImage(ResizedImage, 1050, 140)
 	dc.Clip()
 
 	buff := new(bytes.Buffer)
