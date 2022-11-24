@@ -268,7 +268,7 @@ func Spiderman(text1 string, text2 string) string {
 	dc.LoadFontFace("fonts/impact.ttf", 30)
 	dc.DrawImage(im, 0, 0)
 	dc.DrawStringWrapped(text1, 158, 147, 0, 0, 400, 1.5, gg.AlignLeft)
-	dc.DrawStringWrapped(text2, 492, 86, 0, 0, 400, 1.5, gg.AlignLeft)
+	dc.DrawStringWrapped(text2, 550, 110, 0, 0, 400, 1.5, gg.AlignLeft)
 	dc.Clip()
 
 	buff := new(bytes.Buffer)
