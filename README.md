@@ -62,6 +62,7 @@ In this function you will send what meme template you want and the parameters yo
 | `this_is` | [this_is](https://github.com/fzbian/meme-generator/blob/main/memes/this_is.png?raw=true) | `url` |
 | `three_headed_dragon` | [three_headed_dragon](https://github.com/fzbian/meme-generator/blob/main/memes/three_headed_dragon.png?raw=true) | `text1`, `text2`, `text3` |
 | `undertaker` | [undertaker](https://github.com/fzbian/meme-generator/blob/main/memes/undertaker.png?raw=true) | `text1`, `text2` |
+| `grim_reaper_knocking_door` | [grim_reaper_knocking_door](https://github.com/fzbian/meme-generator/blob/main/memes/grim_reaper_knocking_door.png?raw=true) | `url1`, `url2`, `url3`, `url4` |
 
 #### Example
 
