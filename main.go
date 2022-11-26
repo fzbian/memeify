@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"meme-generator/providers"
+	"meme-generator/router"
 	"net/http"
 	"os"
 
@@ -11,30 +13,35 @@ import (
 )
 
 func main() {
-	e := echo.New()
-	basePath := e.Group("/api")
+	container := providers.BuildContainer()
+	err := container.Invoke(func(server *echo.Echo, router *router.Router) {
+		router.Init()
+		server.Logger.Fatal(server.Start(":8080"))
+	})
+	if err != nil {
+		panic(err)
+	}
 
-	// Custom Meme
-	basePath.GET("/custom/", customMeme)
-
-	// Template Memes
-	basePath.GET("/trump/", trumpMeme)                                  // Trump
-	basePath.GET("/change_my_mind/", changeMyMind)                      // Change My Mind
-	basePath.GET("/disappointed_black_guy/", disappointedBlackGuy)      // Disappointed Black Guy
-	basePath.GET("/distracted_boyfriend/", distractedBoyfriend)         // Disappointed Black Guy
-	basePath.GET("/drake/", drake)                                      // Drake
-	basePath.GET("/expanding_brain/", expandingBrain)                   // Expanding Brain
-	basePath.GET("/jason_momoa_henry_cavil/", jasonMomoaHenryCavil)     // Jason Momoa Henry Cavil
-	basePath.GET("/left_right/", leftRight)                             // Left Right
-	basePath.GET("/running_away_balloon/", runningAwayBalloon)          // Running Away Balloon
-	basePath.GET("/spiderman/", spiderman)                              // Spiderman
-	basePath.GET("/three_headed_dragon/", threeHeadedDragon)            // Three Headed Dragon
-	basePath.GET("/undertaker/", undertaker)                            // Undertaker
-	basePath.GET("/this_is/", thisIs)                                   // This Is
-	basePath.GET("/grim_reaper_knocking_door/", grimReaperKnockingDoor) // Grim Reaper Knocking Door
-
-	basePath.GET("/", index)
-	e.Logger.Fatal(e.Start(":8080"))
+	//// Custom Meme
+	//basePath.GET("/custom/", customMeme)
+	//
+	//// Template Memes
+	//basePath.GET("/trump/", trumpMeme)                                  // Trump
+	//basePath.GET("/change_my_mind/", changeMyMind)                      // Change My Mind
+	//basePath.GET("/disappointed_black_guy/", disappointedBlackGuy)      // Disappointed Black Guy
+	//basePath.GET("/distracted_boyfriend/", distractedBoyfriend)         // Disappointed Black Guy
+	//basePath.GET("/drake/", drake)                                      // Drake
+	//basePath.GET("/expanding_brain/", expandingBrain)                   // Expanding Brain
+	//basePath.GET("/jason_momoa_henry_cavil/", jasonMomoaHenryCavil)     // Jason Momoa Henry Cavil
+	//basePath.GET("/left_right/", leftRight)                             // Left Right
+	//basePath.GET("/running_away_balloon/", runningAwayBalloon)          // Running Away Balloon
+	//basePath.GET("/spiderman/", spiderman)                              // Spiderman
+	//basePath.GET("/three_headed_dragon/", threeHeadedDragon)            // Three Headed Dragon
+	//basePath.GET("/undertaker/", undertaker)                            // Undertaker
+	//basePath.GET("/this_is/", thisIs)                                   // This Is
+	//basePath.GET("/grim_reaper_knocking_door/", grimReaperKnockingDoor) // Grim Reaper Knocking Door
+	//
+	//basePath.GET("/", index)
 }
 
 func customMeme(c echo.Context) error {
@@ -50,7 +57,7 @@ func customMeme(c echo.Context) error {
 	return c.Inline(newMeme, newMeme)
 }
 
-func trumpMeme(c echo.Context) error {
+func TrumpMeme(c echo.Context) error {
 	text := c.QueryParam("text")
 	trump := images.TrumpMeme(text)
 	defer os.Remove(trump)
