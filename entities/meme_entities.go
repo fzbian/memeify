@@ -1,8 +1,9 @@
 package entities
 
 import (
-	"github.com/fogleman/gg"
 	"image/color"
+
+	"github.com/fogleman/gg"
 )
 
 type MemeConfig struct {
@@ -29,14 +30,10 @@ type MemeOptions struct {
 	Width       float64
 	LineSpacing float64
 	Align       gg.Align
+	ResizeWH    int
 }
 
 var (
-	NameMemes = map[string]string{
-		"trump":                     "trump",
-		"grim_reaper_knocking_door": "grim_reaper_knocking_door",
-	}
-
 	NewMemeConfig = map[string]MemeConfig{
 		"trump":                     Trump,
 		"grim_reaper_knocking_door": GrimReaperKnockingDoor,
@@ -67,25 +64,25 @@ var (
 		Color:    color.White,
 		MemeOptions: []MemeOptions{
 			{
-				X: 32,
-				Y: 68,
+				X:        32,
+				Y:        68,
+				ResizeWH: 50,
 			},
 			{
-				X: 153,
-				Y: 57,
+				X:        153,
+				Y:        57,
+				ResizeWH: 80,
 			},
 			{
-				X: 355,
-				Y: 20,
+				X:        355,
+				Y:        20,
+				ResizeWH: 90,
 			},
 			{
-				X: 280,
-				Y: 150,
+				X:        280,
+				Y:        150,
+				ResizeWH: 50,
 			},
 		},
 	}
 )
-
-func (mc MemeConfig) Validate() error {
-	return nil
-}
