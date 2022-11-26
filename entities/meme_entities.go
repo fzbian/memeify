@@ -1,8 +1,9 @@
 package entities
 
 import (
-	"github.com/fogleman/gg"
 	"image/color"
+
+	"github.com/fogleman/gg"
 )
 
 type MemeConfig struct {
@@ -20,7 +21,8 @@ type Font struct {
 }
 
 type MemeOptions struct {
-	Text        string
+	Url         []string
+	Text        []string
 	X           float64
 	Y           float64
 	AX          float64
@@ -28,13 +30,16 @@ type MemeOptions struct {
 	Width       float64
 	LineSpacing float64
 	Align       gg.Align
+	ResizeWH    int
 }
 
 var (
+	NewMemeConfig = map[string]MemeConfig{
+		"trump":                     Trump,
+		"grim_reaper_knocking_door": GrimReaperKnockingDoor,
+	}
+
 	Trump = MemeConfig{
-		Name:     "trump",
-		MemePath: "memes/trump.png",
-		NameFile: "trump.png",
 		Font: Font{
 			Path:     "fonts/arial.ttf",
 			FontSize: 50,
@@ -49,6 +54,34 @@ var (
 				Width:       430,
 				LineSpacing: 1.5,
 				Align:       gg.AlignLeft,
+			},
+		},
+	}
+	GrimReaperKnockingDoor = MemeConfig{
+		Name:     "grim_reaper_knocking_door",
+		MemePath: "memes/grim_reaper_knocking_door.png",
+		NameFile: "grim_reaper_knocking_door.png",
+		Color:    color.White,
+		MemeOptions: []MemeOptions{
+			{
+				X:        32,
+				Y:        68,
+				ResizeWH: 50,
+			},
+			{
+				X:        153,
+				Y:        57,
+				ResizeWH: 80,
+			},
+			{
+				X:        355,
+				Y:        20,
+				ResizeWH: 90,
+			},
+			{
+				X:        280,
+				Y:        150,
+				ResizeWH: 50,
 			},
 		},
 	}

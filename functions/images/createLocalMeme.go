@@ -1,20 +1,8 @@
 package images
 
-import (
-	"bytes"
-	"image/color"
-	"image/jpeg"
-	"log"
-	"math"
-	"meme-generator/functions/files"
-	"os"
-	"strings"
+//TODO: change all functions to scope of services
 
-	"github.com/disintegration/imaging"
-	"github.com/fogleman/gg"
-)
-
-func CustomMeme(top string, bottom string, url string) string {
+/*func CustomMeme(top string, bottom string, url string) string {
 	nameFile, im := files.GetImageURL(url)
 	bounds := im.Bounds()
 	width := bounds.Dx()
@@ -54,30 +42,9 @@ func CustomMeme(top string, bottom string, url string) string {
 	jpeg.Encode(buff, dc.Image(), nil)
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
-}
+}*/
 
-func TrumpMeme(text string) string {
-	im, err := gg.LoadPNG("memes/trump.png")
-	if err != nil {
-		log.Fatalf("unable to open image due to: %q\n", err)
-	}
-
-	dc := gg.NewContextForImage(im)
-	dc.Clear()
-	dc.SetColor(color.Black)
-	dc.LoadFontFace("fonts/arial.ttf", 50)
-	dc.DrawImage(im, 0, 0)
-	dc.DrawStringWrapped(text, 750, 580, 0, 0, 430, 1.5, gg.AlignLeft)
-	dc.Clip()
-
-	buff := new(bytes.Buffer)
-	jpeg.Encode(buff, dc.Image(), nil)
-	nameFile := "trump.jpg"
-	os.WriteFile(nameFile, buff.Bytes(), 0644)
-	return nameFile
-}
-
-func ChangeMyMind(text string) string {
+/*func ChangeMyMind(text string) string {
 	im, err := gg.LoadPNG("memes/change_my_mind.png")
 	if err != nil {
 		log.Fatalf("unable to open image due to: %q\n", err)
@@ -97,9 +64,9 @@ func ChangeMyMind(text string) string {
 	nameFile := "change_my_mind.jpg"
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
-}
+}*/
 
-func DisappointedBlackGuy(text1 string, text2 string) string {
+/*func DisappointedBlackGuy(text1 string, text2 string) string {
 	im, err := gg.LoadPNG("memes/disappointed_black_guy.png")
 	if err != nil {
 		log.Fatalf("unable to open image due to: %q\n", err)
@@ -119,9 +86,9 @@ func DisappointedBlackGuy(text1 string, text2 string) string {
 	nameFile := "disappointed_black_guy.jpg"
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
-}
+}*/
 
-func DistractedBoyfriend(text1 string, text2 string, text3 string) string {
+/*func DistractedBoyfriend(text1 string, text2 string, text3 string) string {
 	im, err := gg.LoadPNG("memes/distracted_boyfriend.png")
 	if err != nil {
 		log.Fatalf("unable to open image due to: %q\n", err)
@@ -142,9 +109,9 @@ func DistractedBoyfriend(text1 string, text2 string, text3 string) string {
 	nameFile := "distracted_boyfriend.jpg"
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
-}
+}*/
 
-func Drake(text1 string, text2 string) string {
+/*func Drake(text1 string, text2 string) string {
 	im, err := gg.LoadPNG("memes/drake.png")
 	if err != nil {
 		log.Fatalf("unable to open image due to: %q\n", err)
@@ -164,9 +131,9 @@ func Drake(text1 string, text2 string) string {
 	nameFile := "drake.jpg"
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
-}
+}*/
 
-func ExpandingBrain(text1 string, text2 string, text3 string, text4 string) string {
+/*func ExpandingBrain(text1 string, text2 string, text3 string, text4 string) string {
 	im, err := gg.LoadPNG("memes/expanding_brain.png")
 	if err != nil {
 		log.Fatalf("unable to open image due to: %q\n", err)
@@ -188,9 +155,9 @@ func ExpandingBrain(text1 string, text2 string, text3 string, text4 string) stri
 	nameFile := "drake.jpg"
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
-}
+}*/
 
-func JasonMomoaHenryCavil(text1 string, text2 string) string {
+/*func JasonMomoaHenryCavil(text1 string, text2 string) string {
 	im, err := gg.LoadPNG("memes/jason_momoa_henry_cavil.png")
 	if err != nil {
 		log.Fatalf("unable to open image due to: %q\n", err)
@@ -210,9 +177,9 @@ func JasonMomoaHenryCavil(text1 string, text2 string) string {
 	nameFile := "drake.jpg"
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
-}
+}*/
 
-func LeftRight(text1 string, text2 string) string {
+/*func LeftRight(text1 string, text2 string) string {
 	im, err := gg.LoadPNG("memes/left_right.png")
 	if err != nil {
 		log.Fatalf("unable to open image due to: %q\n", err)
@@ -232,9 +199,9 @@ func LeftRight(text1 string, text2 string) string {
 	nameFile := "drake.jpg"
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
-}
+}*/
 
-func RunningAwayBalloon(text1 string, text2 string, text3 string) string {
+/*func RunningAwayBalloon(text1 string, text2 string, text3 string) string {
 	im, err := gg.LoadPNG("memes/running_away_balloon.png")
 	if err != nil {
 		log.Fatalf("unable to open image due to: %q\n", err)
@@ -255,9 +222,9 @@ func RunningAwayBalloon(text1 string, text2 string, text3 string) string {
 	nameFile := "drake.jpg"
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
-}
+}*/
 
-func Spiderman(text1 string, text2 string) string {
+/*func Spiderman(text1 string, text2 string) string {
 	im, err := gg.LoadPNG("memes/spiderman.png")
 	if err != nil {
 		log.Fatalf("unable to open image due to: %q\n", err)
@@ -277,9 +244,9 @@ func Spiderman(text1 string, text2 string) string {
 	nameFile := "drake.jpg"
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
-}
+}*/
 
-func ThreeHeadedDragon(text1 string, text2 string, text3 string) string {
+/*func ThreeHeadedDragon(text1 string, text2 string, text3 string) string {
 	im, err := gg.LoadPNG("memes/three_headed_dragon.png")
 	if err != nil {
 		log.Fatalf("unable to open image due to: %q\n", err)
@@ -300,9 +267,9 @@ func ThreeHeadedDragon(text1 string, text2 string, text3 string) string {
 	nameFile := "drake.jpg"
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
-}
+}*/
 
-func Undertaker(text1 string, text2 string) string {
+/*func Undertaker(text1 string, text2 string) string {
 	im, err := gg.LoadPNG("memes/undertaker.png")
 	if err != nil {
 		log.Fatalf("unable to open image due to: %q\n", err)
@@ -322,9 +289,9 @@ func Undertaker(text1 string, text2 string) string {
 	nameFile := "drake.jpg"
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
-}
+}*/
 
-func ThisIs(imageURL string) string {
+/*func ThisIs(imageURL string) string {
 	im, err := gg.LoadPNG("memes/this_is.png")
 	if err != nil {
 		log.Fatalf("unable to open image due to: %q\n", err)
@@ -346,35 +313,4 @@ func ThisIs(imageURL string) string {
 	nameFile := "drake.jpg"
 	os.WriteFile(nameFile, buff.Bytes(), 0644)
 	return nameFile
-}
-
-func GrimReaperKnockingDoor(imageURL1, imageURL2, imageURL3, imageURL4 string) string {
-	im, err := gg.LoadPNG("memes/grim_reaper_knocking_door.png")
-	if err != nil {
-		log.Fatalf("unable to open image due to: %q\n", err)
-	}
-
-	dc := gg.NewContextForImage(im)
-	dc.Clear()
-	dc.SetColor(color.White)
-	_, image1 := files.GetImageURL(imageURL1)
-	_, image2 := files.GetImageURL(imageURL2)
-	_, image3 := files.GetImageURL(imageURL3)
-	_, image4 := files.GetImageURL(imageURL4)
-	ResizedImage1 := imaging.Resize(image1, 50, 50, imaging.Lanczos)
-	ResizedImage2 := imaging.Resize(image2, 80, 80, imaging.Lanczos)
-	ResizedImage3 := imaging.Resize(image3, 90, 90, imaging.Lanczos)
-	ResizedImage4 := imaging.Resize(image4, 50, 50, imaging.Lanczos)
-	dc.DrawImage(im, 0, 0)
-	dc.DrawImage(ResizedImage1, 32, 68)
-	dc.DrawImage(ResizedImage2, 153, 57)
-	dc.DrawImage(ResizedImage3, 355, 20)
-	dc.DrawImage(ResizedImage4, 280, 150)
-	dc.Clip()
-
-	buff := new(bytes.Buffer)
-	jpeg.Encode(buff, dc.Image(), nil)
-	nameFile := "drake.jpg"
-	os.WriteFile(nameFile, buff.Bytes(), 0644)
-	return nameFile
-}
+}*/

@@ -1,11 +1,12 @@
 package controllers
 
 import (
+	"net/http"
+	"os"
+
 	"github.com/labstack/echo/v4"
-	"meme-generator/entities"
 	"meme-generator/interfaces/controllers"
 	"meme-generator/interfaces/services"
-	"os"
 )
 
 type memeController struct {
@@ -17,11 +18,18 @@ func NewMemeController(services services.MemeServices) controllers.MemeControlle
 }
 
 func (controller *memeController) GenerateMeme(ctx echo.Context) error {
-	text := ctx.QueryParam("text")
-	trumpConfig := entities.Trump
-	trumpConfig.MemeOptions[0].Text = text
-	trump := controller.services.GenerateMeme(trumpConfig)
-	defer os.Remove(trump)
+	nameMeme := ctx.Param("nameMeme")
+	qParams := ctx.QueryParams()
+
+	generatedMeme, err := controller.services.GenerateMeme(nameMeme, qParams)
+	if err != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+	}
+
+	defer func() {
+		_ = os.Remove(generatedMeme)
+	}()
+
 	ctx.Response().Header().Set(echo.HeaderContentType, "image/jpeg")
-	return ctx.Inline(trump, trump)
+	return ctx.Inline(generatedMeme, generatedMeme)
 }
