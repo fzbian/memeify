@@ -16,5 +16,5 @@ func NewMemeGroup(memeController controllers.MemeController) groups.MemeGroup {
 
 func (routes MemesGroup) Resources(group *echo.Group) {
 	groupPath := group.Group("")
-	groupPath.GET("/:nameMeme", routes.memeController.GenerateMeme)
+	groupPath.GET("/:nameMeme/", routes.memeController.GenerateMeme)
 }

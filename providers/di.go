@@ -7,6 +7,7 @@ import (
 	"meme-generator/router/groups"
 	"meme-generator/server"
 	"meme-generator/services"
+	"meme-generator/utils"
 )
 
 var (
@@ -20,5 +21,6 @@ func BuildContainer() *dig.Container {
 	_ = Container.Provide(groups.NewMemeGroup)
 	_ = Container.Provide(controllers.NewMemeController)
 	_ = Container.Provide(services.NewMemeServices)
+	_ = Container.Provide(utils.NewUtils)
 	return Container
 }
