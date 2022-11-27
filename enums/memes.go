@@ -6,8 +6,11 @@ const (
 )
 
 const (
-	Trump                           = "trump"
-	TrumpMaxParams                  = 1
-	GrimReaperKnockingDoor          = "grim_reaper_knocking_door"
-	GrimReaperKnockingDoorMaxParams = 4
+	Trump                  = "trump"
+	GrimReaperKnockingDoor = "grim_reaper_knocking_door"
+	ThisIs                 = "this_is"
+)
+
+const (
+	EmptyText = ""
 )
