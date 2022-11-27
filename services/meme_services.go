@@ -5,6 +5,7 @@ import (
 
 	"github.com/labstack/gommon/log"
 	"meme-generator/entities"
+	"meme-generator/enums"
 	"meme-generator/interfaces/services"
 	"meme-generator/interfaces/utils"
 )

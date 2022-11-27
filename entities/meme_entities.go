@@ -47,6 +47,7 @@ type DrawStringWrappedPoints struct {
 	Width       float64
 	LineSpacing float64
 	Align       gg.Align
+	ResizeWH    int
 }
 
 type ResizeImage struct {
@@ -59,6 +60,7 @@ var (
 		"trump":                     Trump,
 		"grim_reaper_knocking_door": GrimReaperKnockingDoor,
 		"this_is":                   ThisIs,
+
 	}
 
 	Trump = MemeConfig{
