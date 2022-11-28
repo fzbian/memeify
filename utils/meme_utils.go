@@ -6,28 +6,26 @@ import (
 	"fmt"
 	"image"
 	"image/jpeg"
-	"math/rand"
 	"net/http"
 	"net/url"
 	"os"
 	"strconv"
 
+	"github.com/disintegration/imaging"
+	"github.com/fogleman/gg"
+	"github.com/goombaio/namegenerator"
+	"github.com/labstack/gommon/log"
 	"meme-generator/entities"
 	"meme-generator/enums"
 	interfaces "meme-generator/interfaces/utils"
-
-	"github.com/disintegration/imaging"
-	"github.com/fogleman/gg"
-	"github.com/labstack/gommon/log"
 )
 
-var ABC = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
-
 type utils struct {
+	randomName namegenerator.Generator
 }
 
-func NewUtils() interfaces.Utils {
-	return &utils{}
+func NewUtils(randomName namegenerator.Generator) interfaces.Utils {
+	return &utils{randomName}
 }
 
 func (u utils) BindMemeConfig(config *entities.MemeConfig, nameMeme string, qValues url.Values) error {
@@ -153,19 +151,9 @@ func (u utils) getImageURL(url string) (string, image.Image, error) {
 	buff := new(bytes.Buffer)
 	_ = jpeg.Encode(buff, m, nil)
 
-	nameFile := u.randomName(15) + ".png"
+	nameFile := u.randomName.Generate() + ".png"
 
 	//os.WriteFile(nameFile, buff.Bytes(), 0644)
 
 	return nameFile, m, nil
-}
-
-func (u utils) randomName(lenght int) string {
-	b := make([]rune, lenght)
-
-	for i := range b {
-		b[i] = ABC[rand.Intn(len(ABC))]
-	}
-
-	return string(b)
 }

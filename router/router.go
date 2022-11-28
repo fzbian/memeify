@@ -2,6 +2,7 @@ package router
 
 import (
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"meme-generator/controllers"
 	"meme-generator/interfaces/router/groups"
 )
@@ -16,6 +17,10 @@ func NewRouter(server *echo.Echo, group groups.MemeGroup) *Router {
 }
 
 func (r *Router) Init() {
+	r.server.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
+		Format: "method=${method}, path=${path}, status=${status} latency=${latency_human}\n",
+	}))
+
 	basePath := r.server.Group("/api")
 
 	basePath.GET("/health", controllers.HealthCheck)
