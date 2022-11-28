@@ -12,17 +12,19 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/disintegration/imaging"
-	"github.com/fogleman/gg"
-	"github.com/labstack/gommon/log"
 	"meme-generator/entities"
 	"meme-generator/enums"
 	interfaces "meme-generator/interfaces/utils"
+
+	"github.com/disintegration/imaging"
+	"github.com/fogleman/gg"
+	"github.com/labstack/gommon/log"
 )
 
 var ABC = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
-type utils struct{}
+type utils struct {
+}
 
 func NewUtils() interfaces.Utils {
 	return &utils{}
@@ -97,14 +99,20 @@ func (u utils) DrawMeme(img image.Image, config entities.MemeConfig) error {
 			option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
 	case config.Name == enums.GrimReaperKnockingDoor:
 		for _, option := range config.MemeOptions {
-			_, img := u.getImageURL(option.UrlImg)
+			_, img, err := u.getImageURL(option.UrlImg)
+			if err != nil {
+				return err
+			}
 			resizedImg := imaging.Resize(img, option.Resize.Width, option.Resize.Width, imaging.Lanczos)
 			dc.DrawImage(resizedImg, option.DrawImgP.X, option.DrawImgP.Y)
 		}
 	case config.Name == enums.ThisIs:
 		option := config.MemeOptions[0]
 		dc.DrawString(option.Text, option.DrawStrP.X, option.DrawStrP.Y)
-		_, img := u.getImageURL(config.MemeOptions[0].UrlImg)
+		_, img, err := u.getImageURL(config.MemeOptions[0].UrlImg)
+		if err != nil {
+			return err
+		}
 		resizedImg := imaging.Resize(img, option.Resize.Width, option.Resize.Height, imaging.Lanczos)
 		dc.DrawImage(resizedImg, option.DrawImgP.X, option.DrawImgP.Y)
 	}
@@ -123,16 +131,19 @@ func (u utils) DrawMeme(img image.Image, config entities.MemeConfig) error {
 	return nil
 }
 
-func (u utils) getImageURL(url string) (string, image.Image) {
+func (u utils) getImageURL(url string) (string, image.Image, error) {
 	if url == "" {
 		im, err := gg.LoadPNG("memes/Insert_image_here.png")
 		if err != nil {
 			log.Info(err)
 		}
-		return "", im
+		return "", im, nil
 	}
 
-	response, _ := http.Get(url)
+	response, err := http.Get(url)
+	if err != nil {
+		return "", nil, errors.New("url invalid")
+	}
 
 	m, _, err := image.Decode(response.Body)
 	if err != nil {
@@ -146,7 +157,7 @@ func (u utils) getImageURL(url string) (string, image.Image) {
 
 	//os.WriteFile(nameFile, buff.Bytes(), 0644)
 
-	return nameFile, m
+	return nameFile, m, nil
 }
 
 func (u utils) randomName(lenght int) string {
