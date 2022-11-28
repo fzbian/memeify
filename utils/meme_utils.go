@@ -11,13 +11,14 @@ import (
 	"os"
 	"strconv"
 
+	"meme-generator/entities"
+	"meme-generator/enums"
+	interfaces "meme-generator/interfaces/utils"
+
 	"github.com/disintegration/imaging"
 	"github.com/fogleman/gg"
 	"github.com/goombaio/namegenerator"
 	"github.com/labstack/gommon/log"
-	"meme-generator/entities"
-	"meme-generator/enums"
-	interfaces "meme-generator/interfaces/utils"
 )
 
 type utils struct {
@@ -48,6 +49,12 @@ func (u utils) BindMemeConfig(config *entities.MemeConfig, nameMeme string, qVal
 		for i := 0; i < 4; i++ {
 			newUrl, exist := qValues["url"+strconv.Itoa(i+1)]
 			u.assignTextOrUrl(&config.MemeOptions[i].UrlImg, exist, newUrl)
+		}
+		break
+	case nameMeme == enums.Drake:
+		for i := 0; i < 2; i++ {
+			newText, exist := qValues["text"+strconv.Itoa(i+1)]
+			u.assignTextOrUrl(&config.MemeOptions[i].Text, exist, newText)
 		}
 		break
 	case nameMeme == enums.ThisIs:
@@ -103,6 +110,13 @@ func (u utils) DrawMeme(img image.Image, config entities.MemeConfig) error {
 			}
 			resizedImg := imaging.Resize(img, option.Resize.Width, option.Resize.Width, imaging.Lanczos)
 			dc.DrawImage(resizedImg, option.DrawImgP.X, option.DrawImgP.Y)
+		}
+	case config.Name == enums.Drake:
+		for _, option := range config.MemeOptions {
+			dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
+				option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
+				option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
+			fmt.Println(option)
 		}
 	case config.Name == enums.ThisIs:
 		option := config.MemeOptions[0]
