@@ -60,7 +60,6 @@ var (
 		"trump":                     Trump,
 		"grim_reaper_knocking_door": GrimReaperKnockingDoor,
 		"this_is":                   ThisIs,
-
 	}
 
 	Trump = MemeConfig{

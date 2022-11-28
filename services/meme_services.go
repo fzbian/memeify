@@ -3,10 +3,11 @@ package services
 import (
 	"net/url"
 
-	"github.com/labstack/gommon/log"
 	"meme-generator/entities"
 	"meme-generator/interfaces/services"
 	"meme-generator/interfaces/utils"
+
+	"github.com/labstack/gommon/log"
 )
 
 type memeServices struct {
