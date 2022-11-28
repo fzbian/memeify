@@ -7,6 +7,7 @@ const (
 
 const (
 	Trump                  = "trump"
+	Drake                  = "drake"
 	GrimReaperKnockingDoor = "grim_reaper_knocking_door"
 	ThisIs                 = "this_is"
 )

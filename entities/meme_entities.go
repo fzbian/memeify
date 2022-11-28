@@ -58,6 +58,7 @@ type ResizeImage struct {
 var (
 	NewMemeConfig = map[string]MemeConfig{
 		"trump":                     Trump,
+		"drake":                     Drake,
 		"grim_reaper_knocking_door": GrimReaperKnockingDoor,
 		"this_is":                   ThisIs,
 	}
@@ -132,6 +133,40 @@ var (
 				Resize: ResizeImage{
 					Width:  50,
 					Height: 50,
+				},
+			},
+		},
+	}
+
+	Drake = MemeConfig{
+		Font: Font{
+			Path:     "fonts/arial.ttf",
+			FontSize: 50,
+		},
+		Color: color.Black,
+		MemeOptions: []MemeOptions{
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           618,
+					Y:           16,
+					AX:          0,
+					AY:          0,
+					Width:       1000,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           618,
+					Y:           618,
+					AX:          0,
+					AY:          0,
+					Width:       1000,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
 				},
 			},
 		},
