@@ -95,6 +95,7 @@ var (
 				},
 			},
 		},
+	}
 
 	DisappointedBlackGuy = MemeConfig{
 		Font: Font{
@@ -123,29 +124,6 @@ var (
 					AX:          0,
 					AY:          0,
 					Width:       680,
-					LineSpacing: 1.5,
-					Align:       gg.AlignLeft,
-				},
-			},
-		},
-	}
-
-	ChangeMyMind = MemeConfig{
-		Font: Font{
-			Path:     "fonts/arial.ttf",
-			FontSize: 18,
-		},
-		Color: color.Black,
-		MemeOptions: []MemeOptions{
-			{
-				Text: "",
-				DrawStrWrappedP: DrawStringWrappedPoints{
-					X:           200,
-					Y:           240,
-					AX:          0,
-					AY:          0,
-					Rotate:      -5,
-					Width:       200,
 					LineSpacing: 1.5,
 					Align:       gg.AlignLeft,
 				},
