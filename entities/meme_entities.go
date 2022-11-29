@@ -60,31 +60,18 @@ var (
 	NewMemeConfig = map[string]MemeConfig{
 		"trump":                     Trump,
 		"change_my_mind":            ChangeMyMind,
+		"disappointed_black_guy":    DisappointedBlackGuy,
+		"distracted_boyfriend":      DistractedBoyfriend,
 		"drake":                     Drake,
-		"grim_reaper_knocking_door": GrimReaperKnockingDoor,
+		"expanding_brain":           ExpandingBrain,
+		"jason_momoa_henry_cavil":   JasonMomoaHenryCavil,
+		"left_right":                LeftRight,
+		"running_away_balloon":      RunningAwayBalloon,
+		"spiderman":                 Spiderman,
 		"this_is":                   ThisIs,
-	}
-
-	Trump = MemeConfig{
-		Font: Font{
-			Path:     "fonts/arial.ttf",
-			FontSize: 50,
-		},
-		Color: color.Black,
-		MemeOptions: []MemeOptions{
-			{
-				Text: "",
-				DrawStrWrappedP: DrawStringWrappedPoints{
-					X:           750,
-					Y:           580,
-					AX:          0,
-					AY:          0,
-					Width:       430,
-					LineSpacing: 1.5,
-					Align:       gg.AlignLeft,
-				},
-			},
-		},
+		"three_headed_dragon":       ThreeHeadedDragon,
+		"undertaker":                Undertaker,
+		"grim_reaper_knocking_door": GrimReaperKnockingDoor,
 	}
 
 	ChangeMyMind = MemeConfig{
@@ -110,54 +97,81 @@ var (
 		},
 	}
 
-	GrimReaperKnockingDoor = MemeConfig{
-		Name:     "grim_reaper_knocking_door",
-		MemePath: "memes/grim_reaper_knocking_door.png",
-		NameFile: "grim_reaper_knocking_door.png",
-		Color:    color.White,
+	DisappointedBlackGuy = MemeConfig{
+		Font: Font{
+			Path:     "fonts/arial.ttf",
+			FontSize: 50,
+		},
+		Color: color.Black,
 		MemeOptions: []MemeOptions{
 			{
-				UrlImg: "",
-				DrawImgP: DrawImagePoint{
-					X: 32,
-					Y: 68,
-				},
-				Resize: ResizeImage{
-					Width:  50,
-					Height: 50,
-				},
-			},
-			{
-				UrlImg: "",
-				DrawImgP: DrawImagePoint{
-					X: 153,
-					Y: 57,
-				},
-				Resize: ResizeImage{
-					Width:  80,
-					Height: 80,
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           30,
+					Y:           30,
+					AX:          0,
+					AY:          0,
+					Width:       680,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
 				},
 			},
 			{
-				UrlImg: "",
-				DrawImgP: DrawImagePoint{
-					X: 355,
-					Y: 20,
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           30,
+					Y:           400,
+					AX:          0,
+					AY:          0,
+					Width:       680,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
 				},
-				Resize: ResizeImage{
-					Width:  90,
-					Height: 90,
+			},
+		},
+	}
+
+	DistractedBoyfriend = MemeConfig{
+		Font: Font{
+			Path:     "fonts/impact.ttf",
+			FontSize: 50,
+		},
+		Color: color.Black,
+		MemeOptions: []MemeOptions{
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           200,
+					Y:           580,
+					AX:          0,
+					AY:          0,
+					Width:       355,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
 				},
 			},
 			{
-				UrlImg: "",
-				DrawImgP: DrawImagePoint{
-					X: 280,
-					Y: 150,
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           650,
+					Y:           350,
+					AX:          0,
+					AY:          0,
+					Width:       355,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
 				},
-				Resize: ResizeImage{
-					Width:  50,
-					Height: 50,
+			},
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           900,
+					Y:           450,
+					AX:          0,
+					AY:          0,
+					Width:       355,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
 				},
 			},
 		},
@@ -197,6 +211,212 @@ var (
 		},
 	}
 
+	ExpandingBrain = MemeConfig{
+		Font: Font{
+			Path:     "fonts/impact.ttf",
+			FontSize: 40,
+		},
+		Color: color.Black,
+		MemeOptions: []MemeOptions{
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           10,
+					Y:           10,
+					AX:          0,
+					AY:          0,
+					Width:       400,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           10,
+					Y:           315,
+					AX:          0,
+					AY:          0,
+					Width:       400,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           10,
+					Y:           620,
+					AX:          0,
+					AY:          0,
+					Width:       400,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           10,
+					Y:           900,
+					AX:          0,
+					AY:          0,
+					Width:       400,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+		},
+	}
+
+	JasonMomoaHenryCavil = MemeConfig{
+		Font: Font{
+			Path:     "fonts/impact.ttf",
+			FontSize: 30,
+		},
+		Color: color.White,
+		MemeOptions: []MemeOptions{
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           44,
+					Y:           347,
+					AX:          0,
+					AY:          0,
+					Width:       150,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           220,
+					Y:           347,
+					AX:          0,
+					AY:          0,
+					Width:       250,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+		},
+	}
+
+	LeftRight = MemeConfig{
+		Font: Font{
+			Path:     "fonts/impact.ttf",
+			FontSize: 24,
+		},
+		Color: color.White,
+		MemeOptions: []MemeOptions{
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           195,
+					Y:           100,
+					AX:          0,
+					AY:          0,
+					Width:       130,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           421,
+					Y:           100,
+					AX:          0,
+					AY:          0,
+					Width:       130,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+		},
+	}
+
+	RunningAwayBalloon = MemeConfig{
+		Font: Font{
+			Path:     "fonts/impact.ttf",
+			FontSize: 30,
+		},
+		Color: color.Black,
+		MemeOptions: []MemeOptions{
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           492,
+					Y:           68,
+					AX:          0,
+					AY:          0,
+					Width:       400,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           600,
+					Y:           600,
+					AX:          0,
+					AY:          0,
+					Width:       400,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           6,
+					Y:           600,
+					AX:          0,
+					AY:          0,
+					Width:       200,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+		},
+	}
+
+	Spiderman = MemeConfig{
+		Font: Font{
+			Path:     "fonts/impact.ttf",
+			FontSize: 30,
+		},
+		Color: color.White,
+		MemeOptions: []MemeOptions{
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           158,
+					Y:           147,
+					AX:          0,
+					AY:          0,
+					Width:       400,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           550,
+					Y:           110,
+					AX:          0,
+					AY:          0,
+					Width:       400,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+		},
+	}
+
 	ThisIs = MemeConfig{
 		Font: Font{
 			Path:     "fonts/impact.ttf",
@@ -220,5 +440,160 @@ var (
 					Height: 500,
 				},
 			}},
+	}
+
+	Undertaker = MemeConfig{
+		Font: Font{
+			Path:     "fonts/impact.ttf",
+			FontSize: 45,
+		},
+		Color: color.White,
+		MemeOptions: []MemeOptions{
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           220,
+					Y:           580,
+					AX:          0,
+					AY:          0,
+					Width:       280,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           536,
+					Y:           440,
+					AX:          0,
+					AY:          0,
+					Width:       280,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+		},
+	}
+
+	ThreeHeadedDragon = MemeConfig{
+		Font: Font{
+			Path:     "fonts/impact.ttf",
+			FontSize: 45,
+		},
+		Color: color.White,
+		MemeOptions: []MemeOptions{
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           5,
+					Y:           333,
+					AX:          0,
+					AY:          0,
+					Width:       170,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           261,
+					Y:           291,
+					AX:          0,
+					AY:          0,
+					Width:       280,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           505,
+					Y:           340,
+					AX:          0,
+					AY:          0,
+					Width:       170,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+		},
+	}
+
+	GrimReaperKnockingDoor = MemeConfig{
+		Name:     "grim_reaper_knocking_door",
+		MemePath: "memes/grim_reaper_knocking_door.png",
+		NameFile: "grim_reaper_knocking_door.png",
+		Color:    color.White,
+		MemeOptions: []MemeOptions{
+			{
+				UrlImg: "",
+				DrawImgP: DrawImagePoint{
+					X: 35,
+					Y: 70,
+				},
+				Resize: ResizeImage{
+					Width:  80,
+					Height: 80,
+				},
+			},
+			{
+				UrlImg: "",
+				DrawImgP: DrawImagePoint{
+					X: 225,
+					Y: 50,
+				},
+				Resize: ResizeImage{
+					Width:  120,
+					Height: 120,
+				},
+			},
+			{
+				UrlImg: "",
+				DrawImgP: DrawImagePoint{
+					X: 520,
+					Y: 50,
+				},
+				Resize: ResizeImage{
+					Width:  130,
+					Height: 130,
+				},
+			},
+			{
+				UrlImg: "",
+				DrawImgP: DrawImagePoint{
+					X: 400,
+					Y: 230,
+				},
+				Resize: ResizeImage{
+					Width:  100,
+					Height: 100,
+				},
+			},
+		},
+	}
+
+	Trump = MemeConfig{
+		Font: Font{
+			Path:     "fonts/arial.ttf",
+			FontSize: 50,
+		},
+		Color: color.Black,
+		MemeOptions: []MemeOptions{
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           750,
+					Y:           580,
+					AX:          0,
+					AY:          0,
+					Width:       430,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+		},
 	}
 )

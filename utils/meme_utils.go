@@ -41,18 +41,20 @@ func (u utils) BindMemeConfig(config *entities.MemeConfig, nameMeme string, qVal
 	config.MemePath = fmt.Sprintf(enums.NamePath, nameMeme)
 
 	switch {
-	case nameMeme == enums.Trump:
-		newText, exist := qValues["text"]
-		u.assignTextOrUrl(&config.MemeOptions[0].Text, exist, newText)
-		break
 	case nameMeme == enums.ChangeMyMind:
 		newText, exist := qValues["text"]
 		u.assignTextOrUrl(&config.MemeOptions[0].Text, exist, newText)
 		break
-	case nameMeme == enums.GrimReaperKnockingDoor:
-		for i := 0; i < 4; i++ {
-			newUrl, exist := qValues["url"+strconv.Itoa(i+1)]
-			u.assignTextOrUrl(&config.MemeOptions[i].UrlImg, exist, newUrl)
+	case nameMeme == enums.DisappointedBlackGuy:
+		for i := 0; i < 2; i++ {
+			newText, exist := qValues["text"+strconv.Itoa(i+1)]
+			u.assignTextOrUrl(&config.MemeOptions[i].Text, exist, newText)
+		}
+		break
+	case nameMeme == enums.DistractedBoyfriend:
+		for i := 0; i < 3; i++ {
+			newText, exist := qValues["text"+strconv.Itoa(i+1)]
+			u.assignTextOrUrl(&config.MemeOptions[i].Text, exist, newText)
 		}
 		break
 	case nameMeme == enums.Drake:
@@ -61,9 +63,61 @@ func (u utils) BindMemeConfig(config *entities.MemeConfig, nameMeme string, qVal
 			u.assignTextOrUrl(&config.MemeOptions[i].Text, exist, newText)
 		}
 		break
+	case nameMeme == enums.ExpandingBrain:
+		for i := 0; i < 4; i++ {
+			newText, exist := qValues["text"+strconv.Itoa(i+1)]
+			u.assignTextOrUrl(&config.MemeOptions[i].Text, exist, newText)
+		}
+		break
+	case nameMeme == enums.JasonMomoaHenryCavil:
+		for i := 0; i < 2; i++ {
+			newText, exist := qValues["text"+strconv.Itoa(i+1)]
+			u.assignTextOrUrl(&config.MemeOptions[i].Text, exist, newText)
+		}
+		break
+	case nameMeme == enums.LeftRight:
+		for i := 0; i < 2; i++ {
+			newText, exist := qValues["text"+strconv.Itoa(i+1)]
+			u.assignTextOrUrl(&config.MemeOptions[i].Text, exist, newText)
+		}
+		break
+	case nameMeme == enums.RunningAwayBalloon:
+		for i := 0; i < 3; i++ {
+			newText, exist := qValues["text"+strconv.Itoa(i+1)]
+			u.assignTextOrUrl(&config.MemeOptions[i].Text, exist, newText)
+		}
+		break
+	case nameMeme == enums.Spiderman:
+		for i := 0; i < 2; i++ {
+			newText, exist := qValues["text"+strconv.Itoa(i+1)]
+			u.assignTextOrUrl(&config.MemeOptions[i].Text, exist, newText)
+		}
+		break
 	case nameMeme == enums.ThisIs:
 		newUrl, exist := qValues["url"]
 		u.assignTextOrUrl(&config.MemeOptions[0].UrlImg, exist, newUrl)
+		break
+	case nameMeme == enums.ThreeHeadedDragon:
+		for i := 0; i < 3; i++ {
+			newText, exist := qValues["text"+strconv.Itoa(i+1)]
+			u.assignTextOrUrl(&config.MemeOptions[i].Text, exist, newText)
+		}
+		break
+	case nameMeme == enums.GrimReaperKnockingDoor:
+		for i := 0; i < 4; i++ {
+			newUrl, exist := qValues["url"+strconv.Itoa(i+1)]
+			u.assignTextOrUrl(&config.MemeOptions[i].UrlImg, exist, newUrl)
+		}
+		break
+	case nameMeme == enums.Undertaker:
+		for i := 0; i < 2; i++ {
+			newText, exist := qValues["text"+strconv.Itoa(i+1)]
+			u.assignTextOrUrl(&config.MemeOptions[i].Text, exist, newText)
+		}
+		break
+	case nameMeme == enums.Trump:
+		newText, exist := qValues["text"]
+		u.assignTextOrUrl(&config.MemeOptions[0].Text, exist, newText)
 		break
 	}
 
@@ -101,27 +155,60 @@ func (u utils) DrawMeme(img image.Image, config entities.MemeConfig) error {
 	}
 
 	switch {
-	case config.Name == enums.Trump:
-		option := config.MemeOptions[0]
-		dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
-			option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
-			option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
 	case config.Name == enums.ChangeMyMind:
 		option := config.MemeOptions[0]
 		dc.Rotate(gg.Radians(option.DrawStrWrappedP.Rotate))
 		dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
 			option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
 			option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
-	case config.Name == enums.GrimReaperKnockingDoor:
+	case config.Name == enums.DisappointedBlackGuy:
 		for _, option := range config.MemeOptions {
-			_, img, err := u.getImageURL(option.UrlImg)
-			if err != nil {
-				return err
-			}
-			resizedImg := imaging.Resize(img, option.Resize.Width, option.Resize.Width, imaging.Lanczos)
-			dc.DrawImage(resizedImg, option.DrawImgP.X, option.DrawImgP.Y)
+			dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
+				option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
+				option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
+			fmt.Println(option)
+		}
+	case config.Name == enums.DistractedBoyfriend:
+		for _, option := range config.MemeOptions {
+			dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
+				option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
+				option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
 		}
 	case config.Name == enums.Drake:
+		for _, option := range config.MemeOptions {
+			dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
+				option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
+				option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
+		}
+	case config.Name == enums.ExpandingBrain:
+		for _, option := range config.MemeOptions {
+			dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
+				option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
+				option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
+			fmt.Println(option)
+		}
+	case config.Name == enums.JasonMomoaHenryCavil:
+		for _, option := range config.MemeOptions {
+			dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
+				option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
+				option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
+			fmt.Println(option)
+		}
+	case config.Name == enums.LeftRight:
+		for _, option := range config.MemeOptions {
+			dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
+				option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
+				option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
+			fmt.Println(option)
+		}
+	case config.Name == enums.RunningAwayBalloon:
+		for _, option := range config.MemeOptions {
+			dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
+				option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
+				option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
+			fmt.Println(option)
+		}
+	case config.Name == enums.Spiderman:
 		for _, option := range config.MemeOptions {
 			dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
 				option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
@@ -137,6 +224,34 @@ func (u utils) DrawMeme(img image.Image, config entities.MemeConfig) error {
 		}
 		resizedImg := imaging.Resize(img, option.Resize.Width, option.Resize.Height, imaging.Lanczos)
 		dc.DrawImage(resizedImg, option.DrawImgP.X, option.DrawImgP.Y)
+	case config.Name == enums.ThreeHeadedDragon:
+		for _, option := range config.MemeOptions {
+			dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
+				option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
+				option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
+			fmt.Println(option)
+		}
+	case config.Name == enums.Undertaker:
+		for _, option := range config.MemeOptions {
+			dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
+				option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
+				option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
+			fmt.Println(option)
+		}
+	case config.Name == enums.GrimReaperKnockingDoor:
+		for _, option := range config.MemeOptions {
+			_, img, err := u.getImageURL(option.UrlImg)
+			if err != nil {
+				return err
+			}
+			resizedImg := imaging.Resize(img, option.Resize.Width, option.Resize.Width, imaging.Lanczos)
+			dc.DrawImage(resizedImg, option.DrawImgP.X, option.DrawImgP.Y)
+		}
+	case config.Name == enums.Trump:
+		option := config.MemeOptions[0]
+		dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
+			option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
+			option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
 	}
 
 	dc.Clip()
