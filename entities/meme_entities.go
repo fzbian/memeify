@@ -48,6 +48,7 @@ type DrawStringWrappedPoints struct {
 	LineSpacing float64
 	Align       gg.Align
 	ResizeWH    int
+	Rotate      float64
 }
 
 type ResizeImage struct {
@@ -58,6 +59,7 @@ type ResizeImage struct {
 var (
 	NewMemeConfig = map[string]MemeConfig{
 		"trump":                     Trump,
+		"change_my_mind":            ChangeMyMind,
 		"drake":                     Drake,
 		"grim_reaper_knocking_door": GrimReaperKnockingDoor,
 		"this_is":                   ThisIs,
@@ -78,6 +80,29 @@ var (
 					AX:          0,
 					AY:          0,
 					Width:       430,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+		},
+	}
+
+	ChangeMyMind = MemeConfig{
+		Font: Font{
+			Path:     "fonts/arial.ttf",
+			FontSize: 18,
+		},
+		Color: color.Black,
+		MemeOptions: []MemeOptions{
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           200,
+					Y:           240,
+					AX:          0,
+					AY:          0,
+					Rotate:      -5,
+					Width:       200,
 					LineSpacing: 1.5,
 					Align:       gg.AlignLeft,
 				},
