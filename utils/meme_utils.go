@@ -45,6 +45,10 @@ func (u utils) BindMemeConfig(config *entities.MemeConfig, nameMeme string, qVal
 		newText, exist := qValues["text"]
 		u.assignTextOrUrl(&config.MemeOptions[0].Text, exist, newText)
 		break
+	case nameMeme == enums.ChangeMyMind:
+		newText, exist := qValues["text"]
+		u.assignTextOrUrl(&config.MemeOptions[0].Text, exist, newText)
+		break
 	case nameMeme == enums.GrimReaperKnockingDoor:
 		for i := 0; i < 4; i++ {
 			newUrl, exist := qValues["url"+strconv.Itoa(i+1)]
@@ -99,6 +103,12 @@ func (u utils) DrawMeme(img image.Image, config entities.MemeConfig) error {
 	switch {
 	case config.Name == enums.Trump:
 		option := config.MemeOptions[0]
+		dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
+			option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
+			option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
+	case config.Name == enums.ChangeMyMind:
+		option := config.MemeOptions[0]
+		dc.Rotate(gg.Radians(option.DrawStrWrappedP.Rotate))
 		dc.DrawStringWrapped(option.Text, option.DrawStrWrappedP.X, option.DrawStrWrappedP.Y,
 			option.DrawStrWrappedP.AX, option.DrawStrWrappedP.AY, option.DrawStrWrappedP.Width,
 			option.DrawStrWrappedP.LineSpacing, option.DrawStrWrappedP.Align)
