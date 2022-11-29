@@ -58,6 +58,7 @@ type ResizeImage struct {
 
 var (
 	NewMemeConfig = map[string]MemeConfig{
+		"trump":                     Trump,
 		"change_my_mind":            ChangeMyMind,
 		"disappointed_black_guy":    DisappointedBlackGuy,
 		"distracted_boyfriend":      DistractedBoyfriend,
@@ -71,7 +72,6 @@ var (
 		"three_headed_dragon":       ThreeHeadedDragon,
 		"undertaker":                Undertaker,
 		"grim_reaper_knocking_door": GrimReaperKnockingDoor,
-		"trump":                     Trump,
 	}
 
 	ChangeMyMind = MemeConfig{
@@ -95,7 +95,6 @@ var (
 				},
 			},
 		},
-	}
 
 	DisappointedBlackGuy = MemeConfig{
 		Font: Font{
@@ -124,6 +123,29 @@ var (
 					AX:          0,
 					AY:          0,
 					Width:       680,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+		},
+	}
+
+	ChangeMyMind = MemeConfig{
+		Font: Font{
+			Path:     "fonts/arial.ttf",
+			FontSize: 18,
+		},
+		Color: color.Black,
+		MemeOptions: []MemeOptions{
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           200,
+					Y:           240,
+					AX:          0,
+					AY:          0,
+					Rotate:      -5,
+					Width:       200,
 					LineSpacing: 1.5,
 					Align:       gg.AlignLeft,
 				},
