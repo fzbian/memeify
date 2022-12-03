@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/labstack/echo/v4"
+	"meme-generator/entities"
 	"meme-generator/interfaces/controllers"
 	"meme-generator/interfaces/services"
 )
@@ -18,10 +19,16 @@ func NewMemeController(services services.MemeServices) controllers.MemeControlle
 }
 
 func (controller *memeController) GenerateMeme(ctx echo.Context) error {
-	nameMeme := ctx.Param("nameMeme")
-	qParams := ctx.QueryParams()
+	filter := entities.FilterMeme{}
+	if err := ctx.Bind(&filter); err != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+	}
 
-	generatedMeme, err := controller.services.GenerateMeme(nameMeme, qParams)
+	if err := filter.Validate(); err != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+	}
+
+	generatedMeme, err := controller.services.GenerateMeme(filter)
 	if err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}

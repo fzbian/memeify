@@ -1,8 +1,6 @@
 package services
 
 import (
-	"net/url"
-
 	"meme-generator/entities"
 	"meme-generator/interfaces/services"
 	"meme-generator/interfaces/utils"
@@ -18,9 +16,9 @@ func NewMemeServices(utils utils.Utils) services.MemeServices {
 	return &memeServices{utils}
 }
 
-func (services *memeServices) GenerateMeme(nameMeme string, queryParams url.Values) (string, error) {
+func (services *memeServices) GenerateMeme(filter entities.FilterMeme) (string, error) {
 	configMeme := entities.MemeConfig{}
-	if err := services.utils.BindMemeConfig(&configMeme, nameMeme, queryParams); err != nil {
+	if err := services.utils.BindMemeConfig(&configMeme, filter); err != nil {
 		return "", err
 	}
 
