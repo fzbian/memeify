@@ -2,7 +2,6 @@ package utils
 
 import (
 	"bytes"
-	"errors"
 	"fmt"
 	"image"
 	"image/jpeg"
@@ -100,19 +99,13 @@ func (u utils) drawer(img image.Image, memeName string, config entities.MemeConf
 		u.drawStringWrappeds(dc, options)
 	case enums.ThisIs:
 		u.drawStrings(dc, options)
-		err := u.drawImages(dc, options)
-		if err != nil {
-			return nil, err
-		}
+		u.drawImages(dc, options)
 	case enums.ThreeHeadedDragon:
 		u.drawStringWrappeds(dc, options)
 	case enums.Undertaker:
 		u.drawStringWrappeds(dc, options)
 	case enums.GrimReaperKnockingDoor:
-		err := u.drawImages(dc, options)
-		if err != nil {
-			return nil, err
-		}
+		u.drawImages(dc, options)
 	case enums.Trump:
 		u.drawStringWrappeds(dc, options)
 	}
@@ -136,30 +129,18 @@ func (u utils) drawStrings(dc *gg.Context, options []entities.MemeOptions) {
 	}
 }
 
-func (u utils) drawImages(dc *gg.Context, options []entities.MemeOptions) error {
+func (u utils) drawImages(dc *gg.Context, options []entities.MemeOptions) {
 	for _, option := range options {
-		_, img, err := u.getImageURL(option.UrlImg)
-		if err != nil {
-			return err
-		}
+		_, img := u.getImageURL(option.UrlImg)
 		resizedImg := imaging.Resize(img, option.Resize.Width, option.Resize.Width, imaging.Lanczos)
 		dc.DrawImage(resizedImg, option.DrawImgP.X, option.DrawImgP.Y)
 	}
-	return nil
 }
 
-func (u utils) getImageURL(url string) (string, image.Image, error) {
-	if url == "" {
-		im, err := gg.LoadPNG("memes/Insert_image_here.png")
-		if err != nil {
-			log.Info(err)
-		}
-		return "", im, nil
-	}
-
+func (u utils) getImageURL(url string) (string, image.Image) {
 	response, err := http.Get(url)
 	if err != nil {
-		return "", nil, errors.New("url invalid")
+		log.Info(err)
 	}
 
 	m, _, err := image.Decode(response.Body)
@@ -174,5 +155,5 @@ func (u utils) getImageURL(url string) (string, image.Image, error) {
 
 	//os.WriteFile(nameFile, buff.Bytes(), 0644)
 
-	return nameFile, m, nil
+	return nameFile, m
 }

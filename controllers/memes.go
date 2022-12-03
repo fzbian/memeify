@@ -24,6 +24,10 @@ func (controller *memeController) GenerateMeme(ctx echo.Context) error {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}
 
+	if err := filter.Validate(); err != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+	}
+
 	generatedMeme, err := controller.services.GenerateMeme(filter)
 	if err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())

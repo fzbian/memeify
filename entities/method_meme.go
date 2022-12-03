@@ -40,7 +40,6 @@ func (meme *MemeConfig) SetMissingValues(filter FilterMeme) {
 	case enums.JasonMomoaHenryCavil:
 		meme.MemeOptions[0].Text = filter.Text1
 		meme.MemeOptions[1].Text = filter.Text2
-		meme.MemeOptions[2].Text = filter.Text3
 		break
 	case enums.LeftRight:
 		meme.MemeOptions[0].Text = filter.Text1

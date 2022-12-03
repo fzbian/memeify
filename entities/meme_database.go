@@ -287,6 +287,7 @@ var (
 		},
 	}
 
+	//TODO: remove unnecessary text param ⬇️
 	RunningAwayBalloon = MemeConfig{
 		Font: Font{
 			Path:     "fonts/impact.ttf",
