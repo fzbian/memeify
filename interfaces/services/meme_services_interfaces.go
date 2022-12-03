@@ -1,9 +1,9 @@
 package services
 
 import (
-	"net/url"
+	"meme-generator/entities"
 )
 
 type MemeServices interface {
-	GenerateMeme(nameMeme string, queryParams url.Values) (string, error)
+	GenerateMeme(filter entities.FilterMeme) (string, error)
 }
