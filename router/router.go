@@ -22,7 +22,7 @@ func (r *Router) Init() {
 	}))
 
 	basePath := r.server.Group("/api")
-
+	r.server.Static("/", "docs")
 	basePath.GET("/health", controllers.HealthCheck)
 	r.memeGroup.Resources(basePath)
 }
