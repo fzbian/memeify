@@ -20,6 +20,7 @@ const (
 	Undertaker             = "undertaker"
 	GrimReaperKnockingDoor = "grim_reaper_knocking_door"
 	Trump                  = "trump"
+	Zoolander              = "zoolander"
 )
 
 const (

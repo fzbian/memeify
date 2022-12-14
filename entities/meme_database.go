@@ -22,6 +22,7 @@ var (
 		"three_headed_dragon":       ThreeHeadedDragon,
 		"undertaker":                Undertaker,
 		"grim_reaper_knocking_door": GrimReaperKnockingDoor,
+		"zoolander":                 Zoolander,
 	}
 
 	ChangeMyMind = MemeConfig{
@@ -287,7 +288,6 @@ var (
 		},
 	}
 
-	//TODO: remove unnecessary text param ⬇️
 	RunningAwayBalloon = MemeConfig{
 		Font: Font{
 			Path:     "fonts/impact.ttf",
@@ -300,18 +300,6 @@ var (
 				DrawStrWrappedP: DrawStringWrappedPoints{
 					X:           492,
 					Y:           68,
-					AX:          0,
-					AY:          0,
-					Width:       400,
-					LineSpacing: 1.5,
-					Align:       gg.AlignLeft,
-				},
-			},
-			{
-				Text: "",
-				DrawStrWrappedP: DrawStringWrappedPoints{
-					X:           600,
-					Y:           600,
 					AX:          0,
 					AY:          0,
 					Width:       400,
@@ -541,6 +529,40 @@ var (
 					AX:          0,
 					AY:          0,
 					Width:       430,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+		},
+	}
+
+	Zoolander = MemeConfig{
+		Font: Font{
+			Path:     "fonts/arial.ttf",
+			FontSize: 50,
+		},
+		Color: color.White,
+		MemeOptions: []MemeOptions{
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           50,
+					Y:           530,
+					AX:          0,
+					AY:          0,
+					Width:       500,
+					LineSpacing: 1.5,
+					Align:       gg.AlignLeft,
+				},
+			},
+			{
+				Text: "",
+				DrawStrWrappedP: DrawStringWrappedPoints{
+					X:           720,
+					Y:           480,
+					AX:          0,
+					AY:          0,
+					Width:       500,
 					LineSpacing: 1.5,
 					Align:       gg.AlignLeft,
 				},
