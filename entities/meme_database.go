@@ -302,7 +302,7 @@ var (
 					Y:           68,
 					AX:          0,
 					AY:          0,
-					Width:       400,
+					Width:       275,
 					LineSpacing: 1.5,
 					Align:       gg.AlignLeft,
 				},

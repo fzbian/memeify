@@ -95,7 +95,7 @@ func (u utils) drawer(img image.Image, memeName string, config entities.MemeConf
 		u.drawStringWrappeds(dc, options)
 	case enums.RunningAwayBalloon:
 		u.drawStringWrappeds(dc, options)
-		dc.DrawStringWrapped(config.MemeOptions[0].Text, 614, 585, config.MemeOptions[0].DrawStrWrappedP.AX, config.MemeOptions[0].DrawStrWrappedP.AY, config.MemeOptions[0].DrawStrWrappedP.Width, config.MemeOptions[0].DrawStrWrappedP.LineSpacing, config.MemeOptions[0].DrawStrWrappedP.Align)
+		dc.DrawStringWrapped(config.MemeOptions[0].Text, 614, 585, config.MemeOptions[0].DrawStrWrappedP.AX, config.MemeOptions[0].DrawStrWrappedP.AY, 150, config.MemeOptions[0].DrawStrWrappedP.LineSpacing, config.MemeOptions[0].DrawStrWrappedP.Align)
 	case enums.Spiderman:
 		u.drawStringWrappeds(dc, options)
 	case enums.ThisIs:
