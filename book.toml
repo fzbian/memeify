@@ -1,0 +1,11 @@
+[book]
+authors = ["Fabian Martin"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Grasapi"
+
+[output.html]
+theme = "Coal"
+default-theme = "Coal"
+preferred-dark-theme = "Coal"
