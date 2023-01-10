@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js coal">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -36,7 +36,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -62,7 +62,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('coal')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -146,7 +146,7 @@
 <p>Grasapi is an API loaded with a database of meme templates that can be used quickly through a GET request or simply make the request through the search bar and it will return the meme with the parameters you give it.</p>
 <h2 id="contact"><a class="header" href="#contact">Contact</a></h2>
 <p><strong>Fzbian</strong> (Developer)</p>
-<p><a href="https://discord.com/">Discord</a> | <a href="mailito:hello@fzbian.me">Mail</a> | <a href="https://github.com/fzbian">GitHub</a></p>
+<p><a href="https://discord.com/users/704771515555774505">Discord</a> | <a href="mailito:hello@fzbian.me">Mail</a> | <a href="https://github.com/fzbian">GitHub</a></p>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
 <p>Input</p>
 <pre><code class="language-http">  GET https://grasapi.fzbian.me/api/trump/?text=go%20is%20the%20best%20programming%20language
