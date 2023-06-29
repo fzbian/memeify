@@ -33,6 +33,7 @@
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
@@ -70,10 +71,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -149,10 +152,10 @@
 <p><a href="https://discord.com/users/704771515555774505">Discord</a> | <a href="mailito:hello@fzbian.me">Mail</a> | <a href="https://github.com/fzbian">GitHub</a></p>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
 <p>Input</p>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/trump/?text=go%20is%20the%20best%20programming%20language
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/trump/?text=go%20is%20the%20best%20programming%20language
 </code></pre>
 <p>Output</p>
-<p><img src="https://grasapi.fzbian.me/api/trump/?text=go%20is%20the%20best%20programming%20language" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/trump/?text=go%20is%20the%20best%20programming%20language" alt="" /></p>
 <h2 id="technologies"><a class="header" href="#technologies">Technologies</a></h2>
 <ul>
 <li>Echo</li>
@@ -167,7 +170,7 @@
 <p><a href="https://mhht913wjms.typeform.com/to/DQD2Fak9">https://mhht913wjms.typeform.com/to/DQD2Fak9</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="change-my-mind-meme"><a class="header" href="#change-my-mind-meme">Change My Mind Meme</a></h1>
 <h2 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/change_my_mind/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/change_my_mind/
 </code></pre>
 <h2 id="params"><a class="header" href="#params">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -175,12 +178,12 @@
 </tbody></table>
 </div>
 <h2 id="example-1"><a class="header" href="#example-1">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/change_my_mind/?text=pineapple%20pizza%20sucks
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/change_my_mind/?text=pineapple%20pizza%20sucks
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/change_my_mind/?text=pineapple%20pizza%20sucks" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/change_my_mind/?text=pineapple%20pizza%20sucks" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="disappointed-black-guy-meme"><a class="header" href="#disappointed-black-guy-meme">Disappointed Black Guy Meme</a></h1>
 <h2 id="api-reference-1"><a class="header" href="#api-reference-1">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/disappointed_black_guy/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/disappointed_black_guy/
 </code></pre>
 <h2 id="params-1"><a class="header" href="#params-1">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -189,12 +192,12 @@
 </tbody></table>
 </div>
 <h2 id="example-2"><a class="header" href="#example-2">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/disappointed_black_guy/?text1=when%20you%20eat%20in%20a%20restaurant%20that%20receives%20nequi&amp;text2=but%20nequi%20is%20down
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/disappointed_black_guy/?text1=when%20you%20eat%20in%20a%20restaurant%20that%20receives%20nequi&amp;text2=but%20nequi%20is%20down
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/disappointed_black_guy/?text1=when%20you%20eat%20in%20a%20restaurant%20that%20receives%20nequi&amp;text2=but%20nequi%20is%20down" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/disappointed_black_guy/?text1=when%20you%20eat%20in%20a%20restaurant%20that%20receives%20nequi&amp;text2=but%20nequi%20is%20down" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="distracted-boyfriend-meme"><a class="header" href="#distracted-boyfriend-meme">Distracted Boyfriend Meme</a></h1>
 <h2 id="api-reference-2"><a class="header" href="#api-reference-2">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/distracted_boyfriend/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/distracted_boyfriend/
 </code></pre>
 <h2 id="params-2"><a class="header" href="#params-2">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -204,12 +207,12 @@
 </tbody></table>
 </div>
 <h2 id="example-3"><a class="header" href="#example-3">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/distracted_boyfriend/?text1=golang&amp;text2=me&amp;text3=java
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/distracted_boyfriend/?text1=golang&amp;text2=me&amp;text3=java
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/distracted_boyfriend/?text1=golang&amp;text2=me&amp;text3=java" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/distracted_boyfriend/?text1=golang&amp;text2=me&amp;text3=java" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="drake-meme"><a class="header" href="#drake-meme">Drake Meme</a></h1>
 <h2 id="api-reference-3"><a class="header" href="#api-reference-3">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/drake/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/drake/
 </code></pre>
 <h2 id="params-3"><a class="header" href="#params-3">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -218,12 +221,12 @@
 </tbody></table>
 </div>
 <h2 id="example-4"><a class="header" href="#example-4">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/drake/?text1=Java&amp;text2=Go
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/drake/?text1=Java&amp;text2=Go
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/drake/?text1=Java&amp;text2=Go" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/drake/?text1=Java&amp;text2=Go" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="expanding-brain-meme"><a class="header" href="#expanding-brain-meme">Expanding Brain Meme</a></h1>
 <h2 id="api-reference-4"><a class="header" href="#api-reference-4">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/expanding_brain/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/expanding_brain/
 </code></pre>
 <h2 id="params-4"><a class="header" href="#params-4">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -234,12 +237,12 @@
 </tbody></table>
 </div>
 <h2 id="example-5"><a class="header" href="#example-5">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/expanding_brain/?text1=python&amp;text2=javascript&amp;text3=cpp&amp;text4=golang
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/expanding_brain/?text1=python&amp;text2=javascript&amp;text3=cpp&amp;text4=golang
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/expanding_brain/?text1=python&amp;text2=javascript&amp;text3=cpp&amp;text4=golang" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/expanding_brain/?text1=python&amp;text2=javascript&amp;text3=cpp&amp;text4=golang" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jason-momoa-henry-cavil-meme"><a class="header" href="#jason-momoa-henry-cavil-meme">Jason Momoa Henry Cavil Meme</a></h1>
 <h2 id="api-reference-5"><a class="header" href="#api-reference-5">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/jason_momoa_henry_cavil/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/jason_momoa_henry_cavil/
 </code></pre>
 <h2 id="params-5"><a class="header" href="#params-5">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -248,12 +251,12 @@
 </tbody></table>
 </div>
 <h2 id="example-6"><a class="header" href="#example-6">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/jason_momoa_henry_cavil/?text1=me%20waiting%20for%20a%20graphics%20card%20on%20ebay&amp;text2=the%20son%20of%20a%20bitch%20with%20a%20bot
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/jason_momoa_henry_cavil/?text1=me%20waiting%20for%20a%20graphics%20card%20on%20ebay&amp;text2=the%20son%20of%20a%20bitch%20with%20a%20bot
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/jason_momoa_henry_cavil/?text1=me%20waiting%20for%20a%20graphics%20card%20on%20ebay&amp;text2=the%20son%20of%20a%20bitch%20with%20a%20bot" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/jason_momoa_henry_cavil/?text1=me%20waiting%20for%20a%20graphics%20card%20on%20ebay&amp;text2=the%20son%20of%20a%20bitch%20with%20a%20bot" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="left-right-meme"><a class="header" href="#left-right-meme">Left Right Meme</a></h1>
 <h2 id="api-reference-6"><a class="header" href="#api-reference-6">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/left_right/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/left_right/
 </code></pre>
 <h2 id="params-6"><a class="header" href="#params-6">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -262,12 +265,12 @@
 </tbody></table>
 </div>
 <h2 id="example-7"><a class="header" href="#example-7">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/left_right/?text1=healthy%20eating%20and%20good%20health&amp;text2=literally%20a%20big%20mac
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/left_right/?text1=healthy%20eating%20and%20good%20health&amp;text2=literally%20a%20big%20mac
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/left_right/?text1=healthy%20eating%20and%20good%20health&amp;text2=literally%20a%20big%20mac" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/left_right/?text1=healthy%20eating%20and%20good%20health&amp;text2=literally%20a%20big%20mac" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="running-away-balloon-meme"><a class="header" href="#running-away-balloon-meme">Running Away Balloon Meme</a></h1>
 <h2 id="api-reference-7"><a class="header" href="#api-reference-7">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/running_away_balloon/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/running_away_balloon/
 </code></pre>
 <h2 id="params-7"><a class="header" href="#params-7">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -276,12 +279,12 @@
 </tbody></table>
 </div>
 <h2 id="example-8"><a class="header" href="#example-8">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/running_away_balloon/?text1=studying%20for%20the%20final%20exam&amp;text2=fortnite
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/running_away_balloon/?text1=studying%20for%20the%20final%20exam&amp;text2=fortnite
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/running_away_balloon/?text1=studying%20for%20the%20final%20exam&amp;text2=fortnite" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/running_away_balloon/?text1=studying%20for%20the%20final%20exam&amp;text2=fortnite" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="spiderman-meme"><a class="header" href="#spiderman-meme">Spiderman Meme</a></h1>
 <h2 id="api-reference-8"><a class="header" href="#api-reference-8">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/spiderman/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/spiderman/
 </code></pre>
 <h2 id="params-8"><a class="header" href="#params-8">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -290,12 +293,12 @@
 </tbody></table>
 </div>
 <h2 id="example-9"><a class="header" href="#example-9">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/spiderman/?text1=Python&amp;text2=Slow
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/spiderman/?text1=Python&amp;text2=Slow
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/spiderman/?text1=Python&amp;text2=Slow" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/spiderman/?text1=Python&amp;text2=Slow" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="this-is-meme"><a class="header" href="#this-is-meme">This Is Meme</a></h1>
 <h2 id="api-reference-9"><a class="header" href="#api-reference-9">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/this_is/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/this_is/
 </code></pre>
 <h2 id="params-9"><a class="header" href="#params-9">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -303,12 +306,12 @@
 </tbody></table>
 </div>
 <h2 id="example-10"><a class="header" href="#example-10">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/this_is/?url=https://github.com/fzbian/meme-generator/blob/main/memes/Insert_image_here.png?raw=true
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/this_is/?url=https://github.com/fzbian/meme-generator/blob/main/memes/Insert_image_here.png?raw=true
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/this_is/?url=https://github.com/fzbian/meme-generator/blob/main/memes/Insert_image_here.png?raw=true" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/this_is/?url=https://github.com/fzbian/meme-generator/blob/main/memes/Insert_image_here.png?raw=true" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="three-headed-dragon-meme"><a class="header" href="#three-headed-dragon-meme">Three Headed Dragon Meme</a></h1>
 <h2 id="api-reference-10"><a class="header" href="#api-reference-10">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/three_headed_dragon/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/three_headed_dragon/
 </code></pre>
 <h2 id="params-10"><a class="header" href="#params-10">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -318,12 +321,12 @@
 </tbody></table>
 </div>
 <h2 id="example-11"><a class="header" href="#example-11">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/three_headed_dragon/?text1=cpp&amp;text2=go&amp;text3=python
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/three_headed_dragon/?text1=cpp&amp;text2=go&amp;text3=python
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/three_headed_dragon/?text1=cpp&amp;text2=go&amp;text3=python" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/three_headed_dragon/?text1=cpp&amp;text2=go&amp;text3=python" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="undertaker-meme"><a class="header" href="#undertaker-meme">Undertaker Meme</a></h1>
 <h2 id="api-reference-11"><a class="header" href="#api-reference-11">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/undertaker/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/undertaker/
 </code></pre>
 <h2 id="params-11"><a class="header" href="#params-11">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -332,12 +335,12 @@
 </tbody></table>
 </div>
 <h2 id="example-12"><a class="header" href="#example-12">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/undertaker/?text1=me%20talking%20with%20my%20hommies&amp;text2=my%20mom%20coming%20out%20of%20the%20rector%27s%20office
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/undertaker/?text1=me%20talking%20with%20my%20hommies&amp;text2=my%20mom%20coming%20out%20of%20the%20rector%27s%20office
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/undertaker/?text1=me%20talking%20with%20my%20hommies&amp;text2=my%20mom%20coming%20out%20of%20the%20rector%27s%20office" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/undertaker/?text1=me%20talking%20with%20my%20hommies&amp;text2=my%20mom%20coming%20out%20of%20the%20rector%27s%20office" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="grim-reaper-knocking-door-meme"><a class="header" href="#grim-reaper-knocking-door-meme">Grim Reaper Knocking Door Meme</a></h1>
 <h2 id="api-reference-12"><a class="header" href="#api-reference-12">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/grim_reaper_knocking_door/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/grim_reaper_knocking_door/
 </code></pre>
 <h2 id="params-12"><a class="header" href="#params-12">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -348,12 +351,12 @@
 </tbody></table>
 </div>
 <h2 id="example-13"><a class="header" href="#example-13">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/grim_reaper_knocking_door/?url1=https://contentstatic.techgig.com/photo/83117460.cms&amp;url2=https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png&amp;url3=https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png&amp;url4=https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/grim_reaper_knocking_door/?url1=https://contentstatic.techgig.com/photo/83117460.cms&amp;url2=https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png&amp;url3=https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png&amp;url4=https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/grim_reaper_knocking_door/?url1=https://contentstatic.techgig.com/photo/83117460.cms&amp;url2=https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png&amp;url3=https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png&amp;url4=https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/grim_reaper_knocking_door/?url1=https://contentstatic.techgig.com/photo/83117460.cms&amp;url2=https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png&amp;url3=https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png&amp;url4=https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="trump"><a class="header" href="#trump">Trump</a></h1>
 <h2 id="api-reference-13"><a class="header" href="#api-reference-13">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/trump/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/trump/
 </code></pre>
 <h2 id="params-13"><a class="header" href="#params-13">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -361,12 +364,12 @@
 </tbody></table>
 </div>
 <h2 id="example-14"><a class="header" href="#example-14">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/trump/?text=pineapple%20pizza%20tastes%20like%20ass
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/trump/?text=pineapple%20pizza%20tastes%20like%20ass
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/trump/?text=pineapple%20pizza%20tastes%20like%20ass" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/trump/?text=pineapple%20pizza%20tastes%20like%20ass" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="zoolander-meme"><a class="header" href="#zoolander-meme">Zoolander Meme</a></h1>
 <h2 id="api-reference-14"><a class="header" href="#api-reference-14">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/zoolander/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/zoolander/
 </code></pre>
 <h2 id="params-14"><a class="header" href="#params-14">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -375,9 +378,9 @@
 </tbody></table>
 </div>
 <h2 id="example-15"><a class="header" href="#example-15">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/zoolander/?text1=my%20dad%20in%20the%20kitchen%20eating%20at%203:00%20a.m&amp;text2=me%20coming%20out%20of%20the%20bathroom%20after%20washing%20my%20hands
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/zoolander/?text1=my%20dad%20in%20the%20kitchen%20eating%20at%203:00%20a.m&amp;text2=me%20coming%20out%20of%20the%20bathroom%20after%20washing%20my%20hands
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/zoolander/?text1=my%20dad%20in%20the%20kitchen%20eating%20at%203:00%20a.m&amp;text2=me%20coming%20out%20of%20the%20bathroom%20after%20washing%20my%20hands" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/zoolander/?text1=my%20dad%20in%20the%20kitchen%20eating%20at%203:00%20a.m&amp;text2=me%20coming%20out%20of%20the%20bathroom%20after%20washing%20my%20hands" alt="" /></p>
 
                     </main>
 
@@ -396,22 +399,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
@@ -436,5 +423,6 @@
         });
         </script>
 
+    </div>
     </body>
 </html>

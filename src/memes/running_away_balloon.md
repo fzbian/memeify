@@ -3,7 +3,7 @@
 ## API Reference
 
 ```http
-  GET https://grasapi.fzbian.me/api/running_away_balloon/
+  GET https://meme-generator-6lhv.onrender.com/api/running_away_balloon/
 ```
 
 ## Params
@@ -15,6 +15,6 @@
 
 ## Example
 ```http
-  GET https://grasapi.fzbian.me/api/running_away_balloon/?text1=studying%20for%20the%20final%20exam&text2=fortnite
+  GET https://meme-generator-6lhv.onrender.com/api/running_away_balloon/?text1=studying%20for%20the%20final%20exam&text2=fortnite
 ```
-![](https://grasapi.fzbian.me/api/running_away_balloon/?text1=studying%20for%20the%20final%20exam&text2=fortnite)
+![](https://meme-generator-6lhv.onrender.com/api/running_away_balloon/?text1=studying%20for%20the%20final%20exam&text2=fortnite)

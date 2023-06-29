@@ -3,7 +3,7 @@
 ## API Reference
 
 ```http
-  GET https://grasapi.fzbian.me/api/expanding_brain/
+  GET https://meme-generator-6lhv.onrender.com/api/expanding_brain/
 ```
 
 ## Params
@@ -17,6 +17,6 @@
 
 ## Example
 ```http
-  GET https://grasapi.fzbian.me/api/expanding_brain/?text1=python&text2=javascript&text3=cpp&text4=golang
+  GET https://meme-generator-6lhv.onrender.com/api/expanding_brain/?text1=python&text2=javascript&text3=cpp&text4=golang
 ```
-![](https://grasapi.fzbian.me/api/expanding_brain/?text1=python&text2=javascript&text3=cpp&text4=golang)
+![](https://meme-generator-6lhv.onrender.com/api/expanding_brain/?text1=python&text2=javascript&text3=cpp&text4=golang)

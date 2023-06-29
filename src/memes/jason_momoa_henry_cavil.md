@@ -3,7 +3,7 @@
 ## API Reference
 
 ```http
-  GET https://grasapi.fzbian.me/api/jason_momoa_henry_cavil/
+  GET https://meme-generator-6lhv.onrender.com/api/jason_momoa_henry_cavil/
 ```
 
 ## Params
@@ -15,6 +15,6 @@
 
 ## Example
 ```http
-  GET https://grasapi.fzbian.me/api/jason_momoa_henry_cavil/?text1=me%20waiting%20for%20a%20graphics%20card%20on%20ebay&text2=the%20son%20of%20a%20bitch%20with%20a%20bot
+  GET https://meme-generator-6lhv.onrender.com/api/jason_momoa_henry_cavil/?text1=me%20waiting%20for%20a%20graphics%20card%20on%20ebay&text2=the%20son%20of%20a%20bitch%20with%20a%20bot
 ```
-![](https://grasapi.fzbian.me/api/jason_momoa_henry_cavil/?text1=me%20waiting%20for%20a%20graphics%20card%20on%20ebay&text2=the%20son%20of%20a%20bitch%20with%20a%20bot)
+![](https://meme-generator-6lhv.onrender.com/api/jason_momoa_henry_cavil/?text1=me%20waiting%20for%20a%20graphics%20card%20on%20ebay&text2=the%20son%20of%20a%20bitch%20with%20a%20bot)

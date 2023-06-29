@@ -3,7 +3,7 @@
 ## API Reference
 
 ```http
-  GET https://grasapi.fzbian.me/api/disappointed_black_guy/
+  GET https://meme-generator-6lhv.onrender.com/api/disappointed_black_guy/
 ```
 
 ## Params
@@ -15,6 +15,6 @@
 
 ## Example
 ```http
-  GET https://grasapi.fzbian.me/api/disappointed_black_guy/?text1=when%20you%20eat%20in%20a%20restaurant%20that%20receives%20nequi&text2=but%20nequi%20is%20down
+  GET https://meme-generator-6lhv.onrender.com/api/disappointed_black_guy/?text1=when%20you%20eat%20in%20a%20restaurant%20that%20receives%20nequi&text2=but%20nequi%20is%20down
 ```
-![](https://grasapi.fzbian.me/api/disappointed_black_guy/?text1=when%20you%20eat%20in%20a%20restaurant%20that%20receives%20nequi&text2=but%20nequi%20is%20down)
+![](https://meme-generator-6lhv.onrender.com/api/disappointed_black_guy/?text1=when%20you%20eat%20in%20a%20restaurant%20that%20receives%20nequi&text2=but%20nequi%20is%20down)

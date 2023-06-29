@@ -32,6 +32,7 @@
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
@@ -69,10 +70,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -148,10 +151,10 @@
 <p><a href="https://discord.com/users/704771515555774505">Discord</a> | <a href="mailito:hello@fzbian.me">Mail</a> | <a href="https://github.com/fzbian">GitHub</a></p>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
 <p>Input</p>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/trump/?text=go%20is%20the%20best%20programming%20language
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/trump/?text=go%20is%20the%20best%20programming%20language
 </code></pre>
 <p>Output</p>
-<p><img src="https://grasapi.fzbian.me/api/trump/?text=go%20is%20the%20best%20programming%20language" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/trump/?text=go%20is%20the%20best%20programming%20language" alt="" /></p>
 <h2 id="technologies"><a class="header" href="#technologies">Technologies</a></h2>
 <ul>
 <li>Echo</li>
@@ -185,22 +188,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
@@ -220,5 +207,6 @@
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

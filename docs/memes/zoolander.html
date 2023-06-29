@@ -32,6 +32,7 @@
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
@@ -69,10 +70,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -143,7 +146,7 @@
                     <main>
                         <h1 id="zoolander-meme"><a class="header" href="#zoolander-meme">Zoolander Meme</a></h1>
 <h2 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/zoolander/
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/zoolander/
 </code></pre>
 <h2 id="params"><a class="header" href="#params">Params</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -152,9 +155,9 @@
 </tbody></table>
 </div>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
-<pre><code class="language-http">  GET https://grasapi.fzbian.me/api/zoolander/?text1=my%20dad%20in%20the%20kitchen%20eating%20at%203:00%20a.m&amp;text2=me%20coming%20out%20of%20the%20bathroom%20after%20washing%20my%20hands
+<pre><code class="language-http">  GET https://meme-generator-6lhv.onrender.com/api/zoolander/?text1=my%20dad%20in%20the%20kitchen%20eating%20at%203:00%20a.m&amp;text2=me%20coming%20out%20of%20the%20bathroom%20after%20washing%20my%20hands
 </code></pre>
-<p><img src="https://grasapi.fzbian.me/api/zoolander/?text1=my%20dad%20in%20the%20kitchen%20eating%20at%203:00%20a.m&amp;text2=me%20coming%20out%20of%20the%20bathroom%20after%20washing%20my%20hands" alt="" /></p>
+<p><img src="https://meme-generator-6lhv.onrender.com/api/zoolander/?text1=my%20dad%20in%20the%20kitchen%20eating%20at%203:00%20a.m&amp;text2=me%20coming%20out%20of%20the%20bathroom%20after%20washing%20my%20hands" alt="" /></p>
 
                     </main>
 
@@ -179,22 +182,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
@@ -214,5 +201,6 @@
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

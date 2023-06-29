@@ -3,7 +3,7 @@
 ## API Reference
 
 ```http
-  GET https://grasapi.fzbian.me/api/three_headed_dragon/
+  GET https://meme-generator-6lhv.onrender.com/api/three_headed_dragon/
 ```
 
 ## Params
@@ -16,6 +16,6 @@
 
 ## Example
 ```http
-  GET https://grasapi.fzbian.me/api/three_headed_dragon/?text1=cpp&text2=go&text3=python
+  GET https://meme-generator-6lhv.onrender.com/api/three_headed_dragon/?text1=cpp&text2=go&text3=python
 ```
-![](https://grasapi.fzbian.me/api/three_headed_dragon/?text1=cpp&text2=go&text3=python)
+![](https://meme-generator-6lhv.onrender.com/api/three_headed_dragon/?text1=cpp&text2=go&text3=python)

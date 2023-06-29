@@ -3,7 +3,7 @@
 ## API Reference
 
 ```http
-  GET https://grasapi.fzbian.me/api/distracted_boyfriend/
+  GET https://meme-generator-6lhv.onrender.com/api/distracted_boyfriend/
 ```
 
 ## Params
@@ -16,6 +16,6 @@
 
 ## Example
 ```http
-  GET https://grasapi.fzbian.me/api/distracted_boyfriend/?text1=golang&text2=me&text3=java
+  GET https://meme-generator-6lhv.onrender.com/api/distracted_boyfriend/?text1=golang&text2=me&text3=java
 ```
-![](https://grasapi.fzbian.me/api/distracted_boyfriend/?text1=golang&text2=me&text3=java)
+![](https://meme-generator-6lhv.onrender.com/api/distracted_boyfriend/?text1=golang&text2=me&text3=java)
