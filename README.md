@@ -1,7 +1,7 @@
 
-# Meme generator
+# Memeify
 
-Meme generator is a code created with the simple purpose of learning how image management works in this language, this project is quite simple.
+Memeify is a code created with the simple purpose of learning how image management works in this language, this project is quite simple.
 
 
 ## API Reference
@@ -43,7 +43,7 @@ Output
 
 ## Deployment
 
-[![Run on Repl.it](https://repl.it/badge/github/fzbian/meme-generator)](https://repl.it/github/fzbian/meme-generator)
+[![Run on Repl.it](https://repl.it/badge/github/fzbian/memeify)](https://repl.it/github/fzbian/memeify)
 
 To deploy this project run
 
